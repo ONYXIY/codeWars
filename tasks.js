@@ -81,6 +81,14 @@ var removeVowels = function (str) {
 };
 
 //---------------------------------------------------------------------------------
+// ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+
+// If the function is passed a valid PIN string, return true, else return false.
+
+// Examples (Input --> Output)
+// "1234"   -->  true
+// "12345"  -->  false
+// "a234"   -->  false
 
 function validatePIN(pin) {
   let num = Number(pin);
@@ -91,3 +99,21 @@ function validatePIN(pin) {
   } else return false;
 }
 console.log(validatePIN("42322"));
+
+//---------------------------------------------------------------------------------
+// Получить единый массив любимых пицц каждого друга
+
+const friends = [
+  { name: 'alex', pizzas: ['cheese', 'peopperoni']},
+  { name: 'mike', pizzas: ['salami', 'margarita']},
+  { name: 'sasha', pizzas: ['meat']},
+  { name: 'anna', pizzas: ['fish']},
+]
+
+const pizzas = friends.reduce((acc, curr) =>{
+  return [...acc, ...curr.pizzas];
+},[])
+console.log(pizzas)
+
+
+
