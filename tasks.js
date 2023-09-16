@@ -64,3 +64,30 @@ const ageGroup = (arr) => {
 console.log(ageGroup(students));
 
 //---------------------------------------------------------------------------------
+// This Kata is intended as a small challenge for my students
+// Create a function that takes a string argument and returns that same string with all vowels removed (vowels are "a", "e", "i", "o", "u").
+// Example (Input --> Output)
+// "drake" --> "drk"
+// "aeiou" --> ""
+// remove_vowels("drake") // => "drk"
+// remove_vowels("aeiou") // => ""
+
+var removeVowels = function (str) {
+  let arr = str
+    .split("")
+    .filter((i) => ["a", "e", "i", "o", "u"].indexOf(i) === -1)
+    .join("");
+  return arr;
+};
+
+//---------------------------------------------------------------------------------
+
+function validatePIN(pin) {
+  let num = Number(pin);
+  if (pin.length === 4 || pin.length === 6) {
+    if (!Number(num)) {
+      return false;
+    }else return true;
+  } else return false;
+}
+console.log(validatePIN("42322"));
