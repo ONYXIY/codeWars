@@ -200,9 +200,9 @@ var list1 = [
 // The format of the strings will always be Europe and JavaScript.
 // All data will always be valid and uniform as in the example above.
 
-function countDevelopers(list) {
+function countDevelopers(list1) {
   let count = 0;
-  let newList = list.filter((item) => {
+  let newList = list1.filter((item) => {
     return item.continent === 'Europe' && item.language === 'JavaScript';
   });
   for (let i = 0; i < newList.length; i++) {
@@ -210,3 +210,6 @@ function countDevelopers(list) {
   }
   return count;
 }
+
+//---------------------------------------------------------------------------------
+
