@@ -61,7 +61,7 @@ const ageGroup = (arr) => {
   });
   return group;
 };
-console.log(ageGroup(students));
+// console.log(ageGroup(students));
 
 //---------------------------------------------------------------------------------
 // This Kata is intended as a small challenge for my students
@@ -98,7 +98,7 @@ function validatePIN(pin) {
     }else return true;
   } else return false;
 }
-console.log(validatePIN("42322"));
+// console.log(validatePIN("42322"));
 
 //---------------------------------------------------------------------------------
 // Получить единый массив любимых пицц каждого друга
@@ -113,7 +113,7 @@ const friends = [
 const pizzas = friends.reduce((acc, curr) =>{
   return [...acc, ...curr.pizzas];
 },[])
-console.log(pizzas)
+// console.log(pizzas)
 
 
 //---------------------------------------------------------------------------------
@@ -211,5 +211,49 @@ function countDevelopers(list1) {
   return count;
 }
 
-//---------------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+const url = 'https://www.adaface.com/online-compiler/online-javascript-compiler'
+function returnHost(url) {
+    const arr = url.split('/')
+    return arr[2];
+}
+// console.log(returnHost(url))
+
+//---------------------------------------------------------------------------
+const req1 = {
+  name: 'name1',
+  phone: 9271122331
+}
+const req5 = {
+  name: 'name1',
+  phone: 92711223311
+}
+const req2 = {
+  name: 'name1',
+  phone: 89271122332
+}
+
+const req3 = {
+  name: 'name1',
+  phone: '79271122333'
+}
+
+const req4 = {
+  name: 'name1',
+  phone: ['79271122334', 9271122335]
+}
+
+function ruNums (req1) {
+
+  let phoneNum = req1.phone.toString().split('')
+    if (phoneNum.length <= 10){
+      phoneNum.unshift('+7')
+    }else if(phoneNum.length === 11){
+    phoneNum.splice(0, 1, '+7')
+    }
+    let arr = phoneNum.join('')
+    return arr
+}
+console.log(ruNums(req5))
+//---------------------------------------------------------------------------
 
