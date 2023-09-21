@@ -95,7 +95,7 @@ function validatePIN(pin) {
   if (pin.length === 4 || pin.length === 6) {
     if (!Number(num)) {
       return false;
-    }else return true;
+    } else return true;
   } else return false;
 }
 // console.log(validatePIN("42322"));
@@ -104,17 +104,16 @@ function validatePIN(pin) {
 // Получить единый массив любимых пицц каждого друга
 
 const friends = [
-  { name: 'alex', pizzas: ['cheese', 'peopperoni']},
-  { name: 'mike', pizzas: ['salami', 'margarita']},
-  { name: 'sasha', pizzas: ['meat']},
-  { name: 'anna', pizzas: ['fish']},
-]
+  { name: "alex", pizzas: ["cheese", "peopperoni"] },
+  { name: "mike", pizzas: ["salami", "margarita"] },
+  { name: "sasha", pizzas: ["meat"] },
+  { name: "anna", pizzas: ["fish"] },
+];
 
-const pizzas = friends.reduce((acc, curr) =>{
+const pizzas = friends.reduce((acc, curr) => {
   return [...acc, ...curr.pizzas];
-},[])
+}, []);
 // console.log(pizzas)
-
 
 //---------------------------------------------------------------------------------
 
@@ -126,10 +125,38 @@ const pizzas = friends.reduce((acc, curr) =>{
 // For example, given the following input array:
 
 var list1 = [
-  { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C' },
-  { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript' },
-  { firstName: 'Ramon', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby' },
-  { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C' },
+  {
+    firstName: "Noah",
+    lastName: "M.",
+    country: "Switzerland",
+    continent: "Europe",
+    age: 19,
+    language: "C",
+  },
+  {
+    firstName: "Anna",
+    lastName: "R.",
+    country: "Liechtenstein",
+    continent: "Europe",
+    age: 52,
+    language: "JavaScript",
+  },
+  {
+    firstName: "Ramon",
+    lastName: "R.",
+    country: "Paraguay",
+    continent: "Americas",
+    age: 29,
+    language: "Ruby",
+  },
+  {
+    firstName: "George",
+    lastName: "B.",
+    country: "England",
+    continent: "Europe",
+    age: 81,
+    language: "C",
+  },
 ];
 // your function should return the following object (associative array in PHP, table in COBOL):
 
@@ -137,12 +164,13 @@ var list1 = [
 function countLanguages(list1) {
   let obj = {};
   list1.forEach((item) => {
-if(!obj[item.language]){
-obj[item.language] = 1
-}else{
-obj[item.language]++}
-})
-  return obj
+    if (!obj[item.language]) {
+      obj[item.language] = 1;
+    } else {
+      obj[item.language]++;
+    }
+  });
+  return obj;
 }
 //---------------------------------------------------------------------------------
 // You will be given an array of objects (associative arrays in PHP, tables in COBOL)
@@ -152,9 +180,30 @@ obj[item.language]++}
 // For example, given the following input array:
 
 var list1 = [
-  { firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
-  { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python' },
-  { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby' } 
+  {
+    firstName: "Sofia",
+    lastName: "I.",
+    country: "Argentina",
+    continent: "Americas",
+    age: 35,
+    language: "Java",
+  },
+  {
+    firstName: "Lukas",
+    lastName: "X.",
+    country: "Croatia",
+    continent: "Europe",
+    age: 35,
+    language: "Python",
+  },
+  {
+    firstName: "Madison",
+    lastName: "U.",
+    country: "United States",
+    continent: "Americas",
+    age: 32,
+    language: "Ruby",
+  },
 ];
 // your function should return the following array:
 
@@ -167,29 +216,58 @@ var list1 = [
 //   },
 //   { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby',
 //     greeting: 'Hi Madison, what do you like the most about Ruby?'
-//   } 
+//   }
 // ];
 
 function greetDevelopers(list) {
-  for(let i = 0; i< list.length; i++){
-  let name = list[i].firstName;
-  let language = list[i].language;
-  list[i].greeting = (`Hi ${name}, what do you like the most about ${language}?`)
-}
-  return list
-  
+  for (let i = 0; i < list.length; i++) {
+    let name = list[i].firstName;
+    let language = list[i].language;
+    list[
+      i
+    ].greeting = `Hi ${name}, what do you like the most about ${language}?`;
+  }
+  return list;
 }
 //---------------------------------------------------------------------------------
-// You will be given an array of objects (hashes in ruby) 
+// You will be given an array of objects (hashes in ruby)
 // representing data about developers who have signed up to attend the coding meetup that you are organising for the first time.
 // Your task is to return the number of JavaScript developers coming from Europe.
 // For example, given the following list:
 
 var list1 = [
-  { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
-  { firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
-  { firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
-  { firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
+  {
+    firstName: "Noah",
+    lastName: "M.",
+    country: "Switzerland",
+    continent: "Europe",
+    age: 19,
+    language: "JavaScript",
+  },
+  {
+    firstName: "Maia",
+    lastName: "S.",
+    country: "Tahiti",
+    continent: "Oceania",
+    age: 28,
+    language: "JavaScript",
+  },
+  {
+    firstName: "Shufen",
+    lastName: "L.",
+    country: "Taiwan",
+    continent: "Asia",
+    age: 35,
+    language: "HTML",
+  },
+  {
+    firstName: "Sumayah",
+    lastName: "M.",
+    country: "Tajikistan",
+    continent: "Asia",
+    age: 30,
+    language: "CSS",
+  },
 ];
 // your function should return number 1.
 
@@ -203,7 +281,7 @@ var list1 = [
 function countDevelopers(list1) {
   let count = 0;
   let newList = list1.filter((item) => {
-    return item.continent === 'Europe' && item.language === 'JavaScript';
+    return item.continent === "Europe" && item.language === "JavaScript";
   });
   for (let i = 0; i < newList.length; i++) {
     count++;
@@ -212,48 +290,52 @@ function countDevelopers(list1) {
 }
 
 //---------------------------------------------------------------------------
-const url = 'https://www.adaface.com/online-compiler/online-javascript-compiler'
+const url =
+  "https://www.adaface.com/online-compiler/online-javascript-compiler";
 function returnHost(url) {
-    const arr = url.split('/')
-    return arr[2];
+  const arr = url.split("/");
+  return arr[2];
 }
 // console.log(returnHost(url))
 
 //---------------------------------------------------------------------------
 const req1 = {
-  name: 'name1',
-  phone: 9271122331
-}
+  name: "name1",
+  phone: 9271122331,
+};
 const req5 = {
-  name: 'name1',
-  phone: 92711223311
-}
+  name: "name1",
+  phone: 92711223311,
+};
 const req2 = {
-  name: 'name1',
-  phone: 89271122332
-}
+  name: "name1",
+  phone: 89271122332,
+};
 
 const req3 = {
-  name: 'name1',
-  phone: '79271122333'
-}
+  name: "name1",
+  phone: "79271122333",
+};
 
 const req4 = {
-  name: 'name1',
-  phone: ['79271122334', 9271122335]
-}
+  name: "name1",
+  phone: ["79271122334", 9271122335],
+};
 
-function ruNums (req1) {
-
-  let phoneNum = req1.phone.toString().split('')
-    if (phoneNum.length <= 10){
-      phoneNum.unshift('+7')
-    }else if(phoneNum.length === 11){
-    phoneNum.splice(0, 1, '+7')
+function ruNums(req) {
+  let phoneNum = Array.isArray(req.phone) ? req.phone : [req.phone];
+  let transformPhone = phoneNum.map((phone) => {
+    let phoneStr = phone.toString();
+    if (phoneStr.length <= 10) {
+      return "+7" + phoneStr;
     }
-    let arr = phoneNum.join('')
-    return arr
+    if (phoneNum.length === 11) {
+      return "+7" + phoneStr.substring(1);
+    }
+    return phoneStr;
+  });
+  return transformPhone.length === 1 ? transformPhone[0] : transformPhone;
 }
-console.log(ruNums(req5))
-//---------------------------------------------------------------------------
+console.log(ruNums(req4));
 
+//---------------------------------------------------------------------------
