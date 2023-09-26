@@ -349,26 +349,44 @@ console.log(ruNums(req4));
 function domainName(url) {
   let domain;
   if (url.indexOf("://") > -1) {
-      domain = url.split('/')[2];
+    domain = url.split("/")[2];
   } else {
-      domain = url.split('/')[0];
+    domain = url.split("/")[0];
   }
-  if (domain.startsWith('www.')) {
-      domain = domain.split('www.')[1];
+  if (domain.startsWith("www.")) {
+    domain = domain.split("www.")[1];
   }
-  return domain.split('.')[0];
+  return domain.split(".")[0];
 }
 
 ///////////better decision
 let domain;
-  if (url.indexOf("://") > -1) {
-      domain = url.split('/')[2];
-  } else {
-      domain = url.split('/')[0];
-  }
-  if (domain.startsWith('www.')) {
-      domain = domain.split('www.')[1];
-  }
-  return domain.split('.')[0];
+if (url.indexOf("://") > -1) {
+  domain = url.split("/")[2];
+} else {
+  domain = url.split("/")[0];
+}
+if (domain.startsWith("www.")) {
+  domain = domain.split("www.")[1];
+}
+return domain.split(".")[0];
 
-  //---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+// Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+
+// Examples:
+
+// * 'abc' =>  ['ab', 'c_']
+// * 'abcdef' => ['ab', 'cd', 'ef']
+
+function solution(str) {
+  let arr = [];
+  if (str.length % 2 !== 0) {
+    str += "_";
+  }
+  for (let i = 0; i < str.length; i += 2) {
+    arr.push(str.slice(i, i + 2));
+  }
+  return arr;
+}
+//---------------------------------------------------------------------------
