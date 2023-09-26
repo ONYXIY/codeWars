@@ -339,3 +339,21 @@ function ruNums(req) {
 console.log(ruNums(req4));
 
 //---------------------------------------------------------------------------
+
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+// * url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+// * url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+// * url = "https://www.cnet.com"                -> domain name = cnet"
+
+function domainName(url) {
+  let parts = url.split("/");
+  let domainUrl = parts.length > 2 ? parts[2] : parts[0];
+
+  if (domainUrl.startsWith("www.")) {
+    domainUrl = domainUrl.split("www.")[1];
+  }
+
+  let domainName = domainUrl.split(".")[0];
+  return domainName;
+}
