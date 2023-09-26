@@ -358,3 +358,17 @@ function domainName(url) {
   }
   return domain.split('.')[0];
 }
+
+///////////better decision
+let domain;
+  if (url.indexOf("://") > -1) {
+      domain = url.split('/')[2];
+  } else {
+      domain = url.split('/')[0];
+  }
+  if (domain.startsWith('www.')) {
+      domain = domain.split('www.')[1];
+  }
+  return domain.split('.')[0];
+
+  //---------------------------------------------------------------------------
