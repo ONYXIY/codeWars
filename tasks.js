@@ -347,13 +347,14 @@ console.log(ruNums(req4));
 // * url = "https://www.cnet.com"                -> domain name = cnet"
 
 function domainName(url) {
-  let parts = url.split("/");
-  let domainUrl = parts.length > 2 ? parts[2] : parts[0];
-
-  if (domainUrl.startsWith("www.")) {
-    domainUrl = domainUrl.split("www.")[1];
+  let domain;
+  if (url.indexOf("://") > -1) {
+      domain = url.split('/')[2];
+  } else {
+      domain = url.split('/')[0];
   }
-
-  let domainName = domainUrl.split(".")[0];
-  return domainName;
+  if (domain.startsWith('www.')) {
+      domain = domain.split('www.')[1];
+  }
+  return domain.split('.')[0];
 }
